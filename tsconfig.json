@@ -1,0 +1,23 @@
+{
+  "extends": "astro/tsconfigs/base",
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.astro",
+    "src/**/*.vue"
+  ],
+  "compilerOptions": {
+    "strictNullChecks": true,
+    "allowJs": true,
+    "target": "ES2021",
+    "lib": [
+      "ES2021"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+    "jsx": "preserve"
+  }
+}

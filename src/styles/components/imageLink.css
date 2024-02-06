@@ -1,0 +1,61 @@
+.ilo-container {
+  @apply block relative overflow-hidden text-center;
+}
+
+.overlay {
+  @apply flex flex-col items-center justify-center w-full h-full absolute top-0 left-0 opacity-0 p-4;
+  background: rgba(255,255,255,0.9);
+  transition: all .5s ease;
+}
+
+.link-overlay {
+  @apply relative w-full h-full no-underline opacity-0;
+  box-shadow: inset 0 0 0 1px #f7f7f7;
+  transition: all .5s ease;
+}
+
+.link-overlay > span {
+  @apply absolute left-0 right-0 font-normal text-lg text-navy;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.overlay:focus-within,
+.overlay:hover,
+.overlay.overlay:focus-within .link-overlay,
+.overlay:hover .link-overlay {
+  @apply opacity-100;
+  transition: all .5s ease;
+}
+
+.link-overlay::before,
+.link-overlay::after {
+  @apply absolute border-0 border-solid border-transparent pointer-events-none w-0 h-0 bottom-0 right-0;
+  content: '';
+}
+
+.link-overlay::before {
+  @apply border-b border-l;
+}
+
+.link-overlay::after {
+  @apply border-t border-r;
+}
+
+.link-overlay:focus::before,
+.link-overlay:hover::before,
+.link-overlay:focus::after,
+.link-overlay:hover::after {
+  @apply border-darkteal w-full h-full;
+  transition: border-color 0s, width .35s, height .35s;
+}
+
+.link-overlay:focus::before,
+.link-overlay:hover::before {
+  transition-delay: 0s, 0s, .35s;
+}
+
+.link-overlay:focus::after,
+.link-overlay:hover::after {
+  transition-delay: 0s, .35s, 0s;
+}

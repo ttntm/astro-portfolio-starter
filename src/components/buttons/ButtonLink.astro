@@ -1,0 +1,22 @@
+---
+interface Props {
+  class: string
+  external?: boolean
+  text: string
+  url: string
+}
+
+const {
+  class: cssClass,
+  external,
+  text,
+  url
+} = Astro.props
+const opensInNewTab = external && { rel: "noopener", target: "_blank" }
+---
+<a
+  href={url}
+  class={cssClass}
+  set:text={text}
+  {...opensInNewTab}
+/>

@@ -1,0 +1,39 @@
+---
+import Base from '@/layouts/Base.astro'
+import ButtonLink from '@/components/buttons/ButtonLink.astro'
+
+interface Props {
+  pageData: PortfolioItemData
+}
+
+const { pageData } = Astro.props
+const {
+  title,
+  slug,
+  cover,
+  description,
+  tags,
+  referenceUrl,
+  itemData
+} = pageData
+const { Content } = await itemData.render()
+---
+<Base title={title}>
+  <article id={title} class="container max-w-screen-md mt-12 mx-auto">
+    <h1 class="mb-2">{title}</h1>
+    <p>{description}</p>
+    <div class="prose min-w-full mt-8">
+      <Content />
+    </div>
+    {referenceUrl && <div class="border-t border-b border-teal text-center py-12 my-12">
+      <a href={referenceUrl} class="text-lg underline hover:no-underline" rel="noopener" target="_blank">{referenceUrl.split('//')[1]}</a>
+    </div>}
+    <div class="text-center mt-12">
+      <ButtonLink
+        class="btn btn-darkteal px-12"
+        text="Back to Portfolio"
+        url="/"
+      />
+    </div>
+  </article>
+</Base>

@@ -1,0 +1,52 @@
+/* CHECKBOXES */
+
+/* Customize the label (the cb-container) */
+.cb-container {
+  @apply block relative cursor-pointer;
+  padding-left: 30px;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.cb-container input {
+  @apply absolute opacity-0 cursor-pointer h-0 w-0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  @apply absolute top-0 left-0 bg-transparent border-current border border-solid shadow-inner;
+  height: 20px;
+  width: 20px;
+  transition: all .35s ease-in-out;
+}
+
+/* When the checkbox is checked, add a background */
+.cb-container input:checked~.checkmark {
+  @apply bg-current;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  @apply absolute hidden;
+}
+
+/* Show the checkmark when checked */
+.cb-container input:checked~.checkmark:after {
+  @apply block;
+}
+
+.cb-container input:focus~.checkmark {
+  @apply outline-dotted outline-black outline-1 outline-offset-2;
+}
+
+/* Style the checkmark/indicator */
+.cb-container .checkmark:after {
+  left: 6px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}

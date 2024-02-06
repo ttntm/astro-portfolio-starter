@@ -1,0 +1,148 @@
+@tailwind base;
+
+*,
+*::before,
+*::after {
+  scroll-behavior: smooth;
+}
+
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+*:focus,
+button:focus {
+  @apply outline-dotted outline-black outline-1 transition-none outline-offset-2;
+  transition: all .35s ease-in-out;
+}
+
+input:focus,
+textarea:focus {
+  @apply bg-white shadow-inner;
+}
+
+body {
+  @apply flex flex-col h-full font-sans text-base text-navy bg-white;
+  padding-top: 80px;
+}
+
+.prose {
+  @apply max-w-full;
+}
+
+.prose .btn {
+  @apply font-normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-bold;
+}
+
+h1, .h1 {
+  @apply text-4xl;
+}
+
+h2, .h2 {
+  @apply text-3xl;
+}
+
+h3, .h3 {
+  @apply text-2xl;
+}
+
+h4, .h4 {
+  @apply text-xl;
+}
+
+h5, .h5 {
+  @apply text-lg;
+}
+
+h6, .h6 {
+  @apply text-base;
+}
+
+/* TAGS */
+
+.tag-list {
+  @apply flex gap-2;
+}
+
+.tag {
+  @apply text-sm text-white bg-navy rounded px-3 py-1;
+}
+
+.tag:hover,
+.tag.active {
+  @apply bg-gray-500;
+}
+
+footer {
+  @apply bg-gray-100 shadow-inner px-6 pt-6 mt-24;
+}
+
+.site-footer {
+  @apply w-full grid grid-cols-1 gap-8 max-w-screen-lg mx-auto my-12;
+}
+
+@media screen and (min-width: 576px) {
+  .site-footer {
+    @apply grid-cols-5;
+  }
+
+  .site-footer #col1 {
+    @apply col-span-2;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body{
+    padding-top: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, :before, :after {
+    scroll-behavior: auto !important;
+    /*CSS transitions*/
+    transition-property: none !important;
+    transition-duration: 0.01ms !important;
+    /*CSS transforms*/
+    transform: none !important;
+    /*CSS animations*/
+    animation: none !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  *:hover {
+    transition: all .35s ease;
+  }
+}
+
+/* Should target iOS devices */
+@supports (-webkit-touch-callout: none) {
+  /* Disable the callout on long presses of links */
+  /* * {
+    -webkit-touch-callout: none !important;
+  } */
+
+  /* Disable the auto zoom on input:focus events */
+  input,
+  input:focus,
+  select,
+  select:focus,
+  textarea,
+  textarea:focus {
+    font-size: 16px !important;
+    border-radius: 0 !important;
+  }
+}

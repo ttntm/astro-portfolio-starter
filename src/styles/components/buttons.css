@@ -1,0 +1,38 @@
+.btn {
+  @apply border border-solid border-transparent w-auto inline-block text-center font-normal whitespace-nowrap relative cursor-pointer px-6 py-2;
+  transition: all .75s ease;
+}
+
+/* colored buttons */
+
+.btn-gray {
+  @apply border-gray-400 text-gray-500;
+}
+
+.btn-gray:hover {
+  @apply bg-gray-400 text-navy;
+}
+
+.btn-darkteal::before {
+  @apply absolute top-0 bottom-0 opacity-0 bg-darkteal;
+  transition: .75s all ease;
+  left: 50%;
+  right: 50%;
+  content: '';
+  z-index: -2;
+}
+
+.btn-darkteal,
+.prose .btn-darkteal {
+  @apply text-darkteal border-darkteal no-underline;
+}
+
+.btn-darkteal:hover::before,
+.prose .btn-darkteal:hover::before {
+  @apply left-0 right-0 opacity-100;
+}
+
+.btn-darkteal:hover,
+.prose .btn-darkteal:hover {
+  @apply text-white;
+}

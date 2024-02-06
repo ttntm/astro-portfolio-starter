@@ -1,0 +1,73 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content'
+import Base from '@/layouts/Base.astro'
+import PortfolioList from '@/components/interactive/PortfolioList.vue'
+import PortfolioLayoutSingle from '@/layouts/PortfolioLayoutSingle.astro'
+
+export async function getStaticPaths() {
+  const entries = await getCollection('portfolio')
+  const pages: PortfolioItemData[] = entries.map((item: CollectionEntry<'portfolio'>) => {
+    const {
+      title,
+      cover,
+      description,
+      tags,
+      referenceUrl
+    } = item.data
+    
+    return {
+      title,
+      slug: item.slug,
+      cover,
+      description,
+      tags,
+      referenceUrl,
+      itemData: item
+    }
+  })
+
+  // Generate List Page
+  const portfolioListPages = [{
+    params: {
+      path: undefined
+    },
+    props: {
+      isListPage: true,
+      listPageData: pages
+    }
+  }]
+
+  // Generate Single Pages
+  const portfolioPages = pages.map((page) => {
+    return {
+      params: {
+        path: page.slug
+      },
+      props: {
+        isSinglePage: true,
+        singlePageData: page
+      }
+    }
+  })
+
+  return ([] as GenObj[]).concat(
+    portfolioListPages,
+    portfolioPages
+  )
+}
+
+const {
+  isListPage,
+  isSinglePage,
+  listPageData,
+  singlePageData
+} = Astro.props
+---
+{isListPage && <Base title="Portfolio">
+  <section class="container max-w-screen-lg mt-12 mx-auto">
+    <h1 class="mb-4">My Portfolio</h1>
+    <PortfolioList workItems={listPageData} client:load />
+  </section>
+</Base>}
+
+{isSinglePage && <PortfolioLayoutSingle pageData={singlePageData} />}
