@@ -24,7 +24,6 @@ textarea:focus {
 
 body {
   @apply flex flex-col h-full font-sans text-base text-navy bg-white;
-  padding-top: 80px;
 }
 
 .prose {
@@ -98,12 +97,6 @@ footer {
 
   .site-footer #col1 {
     @apply col-span-2;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  body{
-    padding-top: 0;
   }
 }
 

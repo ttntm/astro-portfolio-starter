@@ -18,7 +18,7 @@ const {
 const { Content } = await itemData.render()
 ---
 <Base title={title}>
-  <header class="shadow-lg">
+  <header slot="header" class="shadow-lg">
     <img src={`/img/${cover}`} class="w-full object-cover object-center block" width="100%" style="max-height: 450px;" />
   </header>
   <article id={title} class="container max-w-screen-md mt-12 mx-auto">
