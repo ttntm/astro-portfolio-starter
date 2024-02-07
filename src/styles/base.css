@@ -86,20 +86,6 @@ footer {
   @apply bg-gray-100 shadow-inner px-6 pt-6 mt-24;
 }
 
-.site-footer {
-  @apply w-full grid grid-cols-1 gap-8 max-w-screen-lg mx-auto my-12;
-}
-
-@media screen and (min-width: 576px) {
-  .site-footer {
-    @apply grid-cols-5;
-  }
-
-  .site-footer #col1 {
-    @apply col-span-2;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   *, :before, :after {
     scroll-behavior: auto !important;
@@ -124,9 +110,9 @@ footer {
 /* Should target iOS devices */
 @supports (-webkit-touch-callout: none) {
   /* Disable the callout on long presses of links */
-  /* * {
+  * {
     -webkit-touch-callout: none !important;
-  } */
+  }
 
   /* Disable the auto zoom on input:focus events */
   input,

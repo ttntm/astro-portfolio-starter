@@ -27,7 +27,9 @@ const { Content } = await itemData.render()
     <ul class="list-none flex gap-2 mt-4 mb-8">
       {tags.sort().map((t) => (
         <li>
-          <a class="tag" href={`/?filter=${t.toLowerCase()}`}>{t.toLowerCase()}</a>
+          <a class="tag" href={`/?filter=${t.toLowerCase()}`}>
+            {t.toLowerCase()}
+          </a>
         </li>
       ))}
     </ul>

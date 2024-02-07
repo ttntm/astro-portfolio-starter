@@ -6,12 +6,6 @@ interface GenObjWithTags extends GenObj {
   tags: string[]
 }
 
-interface NextPrevItem {
-  slug: string
-  title: string
-  description?: string
-}
-
 type PortfolioItemData = {
   title: string
   slug: string
