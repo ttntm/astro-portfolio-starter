@@ -9,7 +9,6 @@ interface Props {
 const { pageData } = Astro.props
 const {
   title,
-  slug,
   cover,
   description,
   tags,
@@ -19,18 +18,30 @@ const {
 const { Content } = await itemData.render()
 ---
 <Base title={title}>
+  <header class="shadow-lg">
+    <img src={`/img/${cover}`} class="w-full object-cover object-center block" width="100%" style="max-height: 450px;" />
+  </header>
   <article id={title} class="container max-w-screen-md mt-12 mx-auto">
     <h1 class="mb-2">{title}</h1>
     <p>{description}</p>
-    <div class="prose min-w-full mt-8">
+    <ul class="list-none flex gap-2 mt-4 mb-8">
+      {tags.sort().map((t) => (
+        <li>
+          <a class="tag" href={`/?filter=${t.toLowerCase()}`}>{t.toLowerCase()}</a>
+        </li>
+      ))}
+    </ul>
+    <div class="prose min-w-full border-t border-gray-200 pt-8">
       <Content />
     </div>
-    {referenceUrl && <div class="border-t border-b border-teal text-center py-12 my-12">
-      <a href={referenceUrl} class="text-lg underline hover:no-underline" rel="noopener" target="_blank">{referenceUrl.split('//')[1]}</a>
+    {referenceUrl && <div class="border-t border-b border-gray-200 bg-gray-50 text-center py-8 my-12">
+      <a href={referenceUrl} class="text-lg underline hover:no-underline" rel="noopener" target="_blank">
+        {referenceUrl.split('//')[1]}
+      </a>
     </div>}
     <div class="text-center mt-12">
       <ButtonLink
-        class="btn btn-darkteal px-12"
+        class="btn btn-navy px-12"
         text="Back to Portfolio"
         url="/"
       />

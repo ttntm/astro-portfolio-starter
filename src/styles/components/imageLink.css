@@ -46,7 +46,7 @@
 .link-overlay:hover::before,
 .link-overlay:focus::after,
 .link-overlay:hover::after {
-  @apply border-darkteal w-full h-full;
+  @apply border-navy w-full h-full;
   transition: border-color 0s, width .35s, height .35s;
 }
 

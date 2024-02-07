@@ -1,7 +1,7 @@
 ---
 title: Tyrell Corp. - Art Director
 slug: tyrell
-cover: https://picsum.photos/id/345/400
+cover: tyrell.jpg
 description: Art director for Tyrell Corp.
 tags:
   - Branding

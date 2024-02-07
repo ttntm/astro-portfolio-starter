@@ -1,4 +1,3 @@
 @import './components/buttons.css';
-@import './components/checkbox.css';
-/* @import './components/imageLink.css'; */
+@import './components/imageLink.css';
 @tailwind components;

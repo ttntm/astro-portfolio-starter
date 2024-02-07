@@ -1,7 +1,7 @@
 ---
 title: Cyberdyne Systems - OS Design
 slug: cyberdyne-os-design
-cover: https://picsum.photos/id/181/400
+cover: cyberdyne.jpg
 description: OS design for Cyberdyne Systems
 tags:
   - Desktop

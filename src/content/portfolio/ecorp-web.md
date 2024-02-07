@@ -1,7 +1,7 @@
 ---
 title: E Corp - Web App
 slug: ecorp-web-app
-cover: https://picsum.photos/id/238/400
+cover: ecorp.jpg
 description: Web app for E Corp
 tags:
   - UI

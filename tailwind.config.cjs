@@ -21,8 +21,6 @@ module.exports = {
 		extend: {
       colors: {
         lightgray: '#f7f7f7',
-        teal: '#b8cdc9',
-        darkteal: '#849995',
         navy: '#052d49'
       },
       typography: {

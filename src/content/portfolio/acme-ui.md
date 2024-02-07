@@ -1,7 +1,7 @@
 ---
 title: ACME Inc. - UI Design
 slug: acme-ui-design
-cover: https://picsum.photos/id/96/400
+cover: acme.jpg
 description: UI design for ACME Inc.
 tags:
   - UI

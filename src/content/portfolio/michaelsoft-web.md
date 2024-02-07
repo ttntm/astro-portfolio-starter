@@ -1,7 +1,7 @@
 ---
 title: Michaelsoft Ltd. - Web Design
 slug: michaelsoft-web-design
-cover: https://picsum.photos/id/274/400
+cover: michaelsoft.jpg
 description: Web design for Michaelsoft Ltd.
 tags:
   - Branding

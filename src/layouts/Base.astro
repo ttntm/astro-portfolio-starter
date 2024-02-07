@@ -1,26 +1,22 @@
 ---
 import siteData from '@/data/site.json'
 import Head from '@/components/Head.astro'
+import Footer from '@/components/Footer.astro'
 import '@/styles/global.css'
 
 interface Props {
-  image?: string,
   title?: string
 }
 
-const { image, title } = Astro.props
+const { title } = Astro.props
 ---
 <html lang={siteData.language} class="h-full">
-  <Head
-    image={image || undefined}
-    title={`${title || siteData.title} | ${siteData.author}`}
-  />
+  <Head title={`${title || siteData.title} | ${siteData.author}`} />
   <body id="top">
+    <slot name="header" />
     <main class="flex-grow px-6 xl:px-0">
       <slot />
     </main>
-    <footer class="py-8 mt-24">
-      <p class="text-center text-sm">&copy; ttntm 2024</p>
-    </footer>
+    <Footer />
   </body>
 </html>

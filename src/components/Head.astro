@@ -2,14 +2,11 @@
 import siteData from '@/data/site.json'
 
 interface Props {
-  image?: string
   title?: string
 }
 
-const { image, title } = Astro.props
-const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+const { title } = Astro.props
 const titleDisplay = title ? title : siteData.title
-const imageURL = image ? new URL(image, Astro.site) : undefined
 ---
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,13 +14,5 @@ const imageURL = image ? new URL(image, Astro.site) : undefined
 <meta name="description" content={siteData.description}>
 <meta name="author" content={siteData.author}>
 <meta name="robots" content="index,follow">
-
-<meta property="og:site_name" content={titleDisplay}>
-<meta property="og:title" content={titleDisplay}>
-<meta property="og:description" content={siteData.description}>
-<meta property="og:url" content={canonicalURL}>
-<meta name="twitter:card" content={imageURL ? 'summary_large_image' : 'summary' }>
-{imageURL && <meta property="og:image" content={imageURL}>}
-
-<title>{titleDisplay}</title>
 <meta name="theme-color" content="#ffffff">
+<title>{titleDisplay}</title>

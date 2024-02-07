@@ -10,7 +10,7 @@
 </script>
 
 <template>
-  <h2 class="text-xl text-gray-500 mb-2">Filter by Tag:</h2>
+  <h2 class="text-xl text-gray-500 mb-4">Filter by Tag:</h2>
   <nav class="mb-12">
     <ul class="tag-list flex-wrap">
       <li v-for="tag in tags" :key="tag">

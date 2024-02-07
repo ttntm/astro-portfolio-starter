@@ -1,7 +1,7 @@
 ---
 title: Contoso Inc. - UI Design
 slug: contoso-ui-design
-cover: https://picsum.photos/id/160/400
+cover: contoso.jpg
 description: UI design for Contoso Inc.
 tags:
   - UI
