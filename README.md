@@ -6,6 +6,8 @@ Codesandbox: [codesandbox.io/p/github/ttntm/astro-potfolio-starter](https://code
 
 A detailed article about this demo can be found at [ttntm.me/blog/building-portfolio-with-astro-and-vue](https://ttntm.me/blog/building-portfolio-with-astro-and-vue/)
 
+![preview screenshot](./preview.png)
+
 ## Using this Starter
 
 tbd
