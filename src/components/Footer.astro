@@ -3,6 +3,20 @@ const date = new Date()
 const year = date.getFullYear()
 ---
 <footer class="text-center py-8 mt-24">
-  <p class="text-sm mb-2">A demo site for the article <a class="underline hover:no-underline" href="https://ttntm.me/blog/building-portfolio-with-astro-and-vue/">Building a Filterable Portfolio with Astro and Vue</a>.</p>
-  <p class="text-xs m-0">&copy; ttntm {year}</p>
+  <p class="text-sm mb-2">
+    A demo site for the article <a href="https://ttntm.me/blog/building-portfolio-with-astro-and-vue/">Building a Filterable Portfolio with Astro and Vue</a>.
+  </p>
+  <p class="text-xs m-0">
+    &copy; <a href="https://ttntm.me">ttntm</a> {year} | Design: <a href="https://sahar.design">Sahar</a> | Images: <a href="https://picsum.photos">Lorem Picsum</a>
+  </p>
 </footer>
+
+<style>
+  a {
+    @apply underline;
+  }
+
+  a:hover {
+    @apply no-underline;
+  }
+</style>

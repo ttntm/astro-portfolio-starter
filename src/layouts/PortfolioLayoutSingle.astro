@@ -36,12 +36,12 @@ const { Content } = await itemData.render()
     <div class="prose min-w-full border-t border-gray-200 pt-8">
       <Content />
     </div>
-    {referenceUrl && <div class="border-t border-b border-gray-200 bg-gray-50 text-center py-8 my-12">
+    {referenceUrl && <div class="border-t border-b border-gray-200 bg-gray-50 text-center py-8 my-8">
       <a href={referenceUrl} class="text-lg underline hover:no-underline" rel="noopener" target="_blank">
         {referenceUrl.split('//')[1]}
       </a>
     </div>}
-    <div class="text-center mt-12">
+    <div class="text-center">
       <ButtonLink
         class="btn btn-navy px-12"
         text="Back to Portfolio"
