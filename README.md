@@ -15,11 +15,9 @@ A detailed article about this starter can be found here: [Building a Filterable 
 
 ### Prerequisites
 
-1. Astro (developed and tested with version 2.10.12)
+1. Astro (developed and tested with version 4.0.2)
 2. Vue (Astro integration)
-3. Tailwind CSS 
-
-All other dependencies are either linked from a CDN or included in this repository.
+3. Tailwind CSS (Astro integration) + typography plugin
 
 ### Setup
 
