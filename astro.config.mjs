@@ -8,6 +8,7 @@ const baseURL = process.env.NODE_ENV === 'production' ? 'https://prod.site/' : '
 // sitemap: https://docs.astro.build/en/guides/integrations-guide/sitemap/#configuration
 export default defineConfig({
   site: baseURL,
+  outDir: './docs',
   image: {
     remotePatterns: [{
       protocol: 'https'
