@@ -3,14 +3,18 @@ import tailwind from '@astrojs/tailwind'
 import vue from '@astrojs/vue'
 
 const baseURL = process.env.NODE_ENV === 'production'
+  ? '/astro-potfolio-starter/'
+  : '/'
+
+const siteURL = process.env.NODE_ENV === 'production'
   ? 'https://ttntm.github.io/astro-potfolio-starter/'
   : 'http://localhost:4321/'
 
 // https://astro.build/config
 // sitemap: https://docs.astro.build/en/guides/integrations-guide/sitemap/#configuration
 export default defineConfig({
-  site: baseURL,
-  base: './',
+  site: siteURL,
+  base: baseURL,
   outDir: './docs',
   image: {
     remotePatterns: [{
