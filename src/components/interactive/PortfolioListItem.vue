@@ -7,7 +7,7 @@
 <template>
   <article class="ilo-container max-w-sm">
     <img
-      :src="`/img/${data.cover}`"
+      :src="`./img/${data.cover}`"
       :alt="data.title"
       class="w-full block object-cover mx-auto"
       loading="lazy"
