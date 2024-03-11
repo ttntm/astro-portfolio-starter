@@ -6,9 +6,9 @@ A detailed article about this starter can be found here: [Building a Filterable 
 
 ## Demo
 
-[![preview screenshot](./preview.png)](https://codesandbox.io/p/github/ttntm/astro-potfolio-starter/main)
+[![preview screenshot](./preview.png)](https://codesandbox.io/p/github/ttntm/astro-portfolio-starter/main)
 
-> Live demo: [codesandbox.io/p/github/ttntm/astro-potfolio-starter](https://codesandbox.io/p/github/ttntm/astro-potfolio-starter/main)
+> Live demo: [codesandbox.io/p/github/ttntm/astro-portfolio-starter](https://codesandbox.io/p/github/ttntm/astro-portfolio-starter/main)
 
 
 ## Using this Starter
@@ -38,7 +38,7 @@ CSS (in `./src/styles/`) is processed by Astro directly; this project is using t
 
 Page structure and templates are stored in `./src/layouts/` and can be edited there.
 
-`./layouts/Base.astro` exposes 2 slots - one named `header` and a default one - which are used to inject the actual page content. 
+`./layouts/Base.astro` exposes 2 slots - one named `header` and a default one - which are used to inject the actual page content.
 
 The portfolio is a [collection](https://docs.astro.build/en/guides/content-collections/) that's defined in `./src/content/config.ts`. Collection pages (in `./src/content/portfolio/`) are processed in alphabetical order by the `[...path].astro` page template in `./src/pages/`. Its `getStaticPaths()` function processes the whole collection and generates both the index/list page (via `path: undefined`) and the individual project pages (via `path: page.slug`) rendered by the project page template in `./src/layouts/PortfolioLayoutSingle.astro`.
 
@@ -51,7 +51,7 @@ Page content is stored in
 
 #### Images
 
-Images are stored in `./public/img/` and are _not_ being processed by any image optimization. 
+Images are stored in `./public/img/` and are _not_ being processed by any image optimization.
 
 This is probably not ideal, but `getImage()` from `astro:image` ([docs](https://docs.astro.build/en/guides/images/)) can only be used on the server side, meaning that conditional rendering based on filtered data will make it break (yes, I tried).
 
@@ -59,7 +59,6 @@ If image size and performance should become an issue at some point: I can recomm
 
 #### Tags
 
-Portfolio projects must have one or more tags as defined for the `portfolio` collection in `./src/content/config.ts`. 
+Portfolio projects must have one or more tags as defined for the `portfolio` collection in `./src/content/config.ts`.
 
 Tags are extracted and processed automatically by the `getStaticPaths()` function of the `[...path].astro` page template in `./src/pages` and the `PortfolioList.vue` component in `./src/components/interactive/` to build the tag-based filters/sub-navigation.
-

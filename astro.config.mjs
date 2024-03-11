@@ -3,11 +3,11 @@ import tailwind from '@astrojs/tailwind'
 import vue from '@astrojs/vue'
 
 const baseURL = process.env.NODE_ENV === 'production'
-  ? '/astro-potfolio-starter/'
+  ? '/astro-portfolio-starter/'
   : '/'
 
 const siteURL = process.env.NODE_ENV === 'production'
-  ? 'https://ttntm.github.io/astro-potfolio-starter/'
+  ? 'https://ttntm.github.io/astro-portfolio-starter/'
   : 'http://localhost:4321/'
 
 // https://astro.build/config
