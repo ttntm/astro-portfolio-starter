@@ -2,20 +2,34 @@ import { defineConfig } from 'astro/config'
 import tailwind from '@astrojs/tailwind'
 import vue from '@astrojs/vue'
 
-const baseURL = process.env.NODE_ENV === 'production'
-  ? '/astro-portfolio-starter/'
-  : '/'
+const build = {
+  baseURL: '/',
+  outDir: './dist',
+  siteURL: 'http://localhost:4321/'
+}
 
-const siteURL = process.env.NODE_ENV === 'production'
-  ? 'https://ttntm.github.io/astro-portfolio-starter/'
-  : 'http://localhost:4321/'
+const env = process.env.NODE_ENV
+
+switch (env) {
+  case 'pages':
+    build.baseURL = '/astro-portfolio-starter/'
+    build.outDir = './docs'
+    build.siteURL = 'https://ttntm.github.io/astro-portfolio-starter/'
+    break
+
+  case 'production':
+    build.siteURL = 'https://example.com/'
+    break
+
+  default:
+    break
+}
 
 // https://astro.build/config
-// sitemap: https://docs.astro.build/en/guides/integrations-guide/sitemap/#configuration
 export default defineConfig({
-  site: siteURL,
-  base: baseURL,
-  outDir: './docs',
+  site: build.siteURL,
+  base: build.baseURL,
+  outDir: build.outDir,
   image: {
     remotePatterns: [{
       protocol: 'https'

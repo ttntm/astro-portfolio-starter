@@ -34,6 +34,18 @@ A detailed article about this starter can be found here: [Building a Filterable 
 
 CSS (in `./src/styles/`) is processed by Astro directly; this project is using the [Tailwind integration module](https://docs.astro.build/en/guides/integrations-guide/tailwind/).
 
+**Deployment:**
+
+Astro requires the final deployed URL in its config file.
+
+Replace the placeholder with your site's URL and keep the trailing slash:
+
+```js
+case 'production':
+  build.siteURL = 'https://example.com/'
+  break
+```
+
 ### Templates/Layouts
 
 Page structure and templates are stored in `./src/layouts/` and can be edited there.
